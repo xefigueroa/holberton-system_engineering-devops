@@ -1,2 +1,2 @@
 #!/bin/bash
-print "\"(\u00d4o)\'\n"
+printf "\"(\u00d4o)\'\n"

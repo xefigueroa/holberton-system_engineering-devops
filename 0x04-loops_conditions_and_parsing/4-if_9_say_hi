@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#Display Holberton School and Hi on 9th iteration
 count=0
 while [ $count -lt 10 ]; do
 	if [ $count -eq 9 ]

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #display Holberton School OR Good Luck OR bad luck
-count=0
-while [ $count -lt 10 ]; do
+count=1
+while [ $count -lt 11 ]; do
 	if [ $count -eq 4 ]; then
 		echo bad luck
 	elif [ $count -eq 8 ]; then
@@ -9,4 +9,5 @@ while [ $count -lt 10 ]; do
 	else
 		echo Holberton School
 	fi
+	((count++))
 done

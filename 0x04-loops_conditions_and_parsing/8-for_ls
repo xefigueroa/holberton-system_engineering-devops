@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+#lists files without first num and dash
+for list in *; do
+	echo "$list" | cut -d '-' -f2
+done

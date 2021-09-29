@@ -15,11 +15,11 @@ def recurse(subreddit, hot_list=[], after=None):
     res = r.get('data', {}).get('children', None)
     control = r.get('data', {}).get('after', None)
 
-    if control:
+    if control is not None:
         if res:
             for hot in res:
-                hot_list.append(item.get('data').get('title'))
-        if control:
+                hot_list.append(hot.get('data').get('title'))
+        if control is not None:
             recurse(subreddit, hot_list, control)
         return hot_list
     else:

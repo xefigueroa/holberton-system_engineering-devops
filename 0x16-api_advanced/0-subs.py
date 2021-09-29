@@ -11,4 +11,4 @@ def number_of_subscribers(subreddit):
     BASE_URL = 'http://www.reddit.com/r/{}/about.json'
     head = {'User-Agent': 'Mozilla/5.0'}
     r = requests.get(BASE_URL.format(subreddit), headers=head)
-    return r.json().get('data',{}).get('subscribers', 0)
+    return r.json().get('data', {}).get('subscribers', 0)

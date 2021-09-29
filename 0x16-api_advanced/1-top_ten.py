@@ -6,17 +6,16 @@ import requests
 
 def top_ten(subreddit):
     """prints titles of 10 1st hot posts"""
-    BASE_URL = 'http://www.reddit.com/r/{}/about.json'
+    BASE_URL = 'http://www.reddit.com/r/{}/hot.json'.format(subreddit)
     head = {'User-Agent': 'Mozilla/5.0'}
     par = {'limit': 10}
 
-    r = requests.get(BASE_URL.format(subreddit), headers=head,
-                     params=par, allow_redirect=False)
+    r = requests.get(BASE_URL, params=par, headers=head).json()
 
-    data = r.json().get('data', {}).get('children', {})
+    res = r.get('data', {}).get('children', None)
 
-    if data:
-        for post in data:
-            print(data.get('data').get('title'))
+    if res:
+        for post in res:
+            print(post.get('data').get('title'))
     else:
         print(None)

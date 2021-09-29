@@ -10,10 +10,10 @@ def recurse(subreddit, hot_list=[], after=None):
     head = {'User-Agent': 'Mozilla/5.0'}
     par = {'after': after}
 
-    r = requests.get(BASE_URL, params=par, headers=head).json()
+    r = requests.get(BASE_URL, params=par, headers=head)
 
-    res = r.get('data', {}).get('children', None)
-    control = r.get('data', {}).get('after', None)
+    res = r.json().get('data', {}).get('children', None)
+    control = r.json().get('data', {}).get('after', None)
 
     if control is not None:
         if res:

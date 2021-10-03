@@ -1,6 +1,6 @@
 # Postmortem
 
-<img align="left" alt="Typo" src="/images/typo.jpg" />
+![Developer Typo Funny](https://i.redd.it/8gwce0j02oa21.jpg)
 
 ## Issue Summary
 On Friday 03/24/2017 at approximately 07:32:16 GMT an error ocurred in an isolated container running Apache Web Server and MySQL with the purpose of displaying a Holberton Wordpress site. GET requests demonstrated that users received Error Code 500 (Internal Server Error). The root of the outage was determined, at 07:58:23 GMT, to be a Typografical error regarding a file with extension `.php` presenting itself with extension `.phpp`.
@@ -26,4 +26,4 @@ On Friday 03/24/2017 at approximately 07:32:16 GMT an error ocurred in an isolat
 The root cause of the incident in question was in fact a typographical error in which `/var/www/html/wp-settings.php` when tyring to load the file `/var/www/html/wp-includes/class-wp-locale.phpp` indicated that said file was non-existent. The file extension `.phpp` was supposed to be `.php`. Once the typo was corrected, tested and comfirmed to function accordingly a Puppet manifest was made to automate the fix on remaining servers affected if any.
 
 ## Corrective and preventative measures
-Testing is imperative in order to prevent such incidents and more importantly diminish errors that require unnesesary work such as a typographical error. Nevertheless reviewing code and monitoring servers for a time period are also good ways to correct and prevent these types of ocurrences and at the same time focus on more hard to detect situations. 
+Testing is imperative in order to prevent such incidents and more importantly diminish errors that require unnesesary work such as a typographical error. Nevertheless reviewing code and monitoring servers for a time period are also good ways to correct and prevent these types of ocurrences and at the same time focus on more hard to detect situations. Also fire Bob! It was his fault! (Theres no actual Bob and no Bobs were harmed during the making of this task.)

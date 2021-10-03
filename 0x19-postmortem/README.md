@@ -1,5 +1,7 @@
 # Postmortem
 
+<img align="left" alt="Typo" src="/images/typo.jpg" />
+
 ## Issue Summary
 On Friday 03/24/2017 at approximately 07:32:16 GMT an error ocurred in an isolated container running Apache Web Server and MySQL with the purpose of displaying a Holberton Wordpress site. GET requests demonstrated that users received Error Code 500 (Internal Server Error). The root of the outage was determined, at 07:58:23 GMT, to be a Typografical error regarding a file with extension `.php` presenting itself with extension `.phpp`.
 
